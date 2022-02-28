@@ -8,12 +8,17 @@
 import UIKit
 
 @main
+//@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    var coordinator: MainCoordinator?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        
+        // send that into our coordinator so that it can display view controllers
+
         return true
     }
 
