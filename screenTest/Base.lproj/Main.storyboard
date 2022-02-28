@@ -8,21 +8,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="screenTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewController" id="BYZ-38-t0r" customClass="FirstViewController" customModule="screenTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHc-hq-che">
-                                <rect key="frame" x="154" y="326" width="202" height="85"/>
+                                <rect key="frame" x="106" y="116" width="202" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Go to Second Page"/>
                                 <connections>
                                     <action selector="goToSecondPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JVw-7b-bAZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpC-8W-cea">
+                                <rect key="frame" x="141" y="209" width="133" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Go to Third Page"/>
+                                <connections>
+                                    <action selector="goToThirdPage:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="ajU-nA-jRH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -34,16 +43,34 @@
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="frM-fj-5HC">
             <objects>
-                <viewController storyboardIdentifier="TableViewController" id="obO-Qk-gPt" customClass="TableViewController" customModule="screenTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="obO-Qk-gPt" customClass="SecondViewController" customModule="screenTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nNS-wG-my8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg4-Fa-txN">
+                                <rect key="frame" x="144" y="456" width="128" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Go to First Page"/>
+                                <connections>
+                                    <action selector="navigateToFirstPage:" destination="obO-Qk-gPt" eventType="primaryActionTriggered" id="qyx-Gf-Q5L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrl-Sk-zM3">
+                                <rect key="frame" x="141" y="508" width="133" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Go to Third Page"/>
+                                <connections>
+                                    <action selector="navigateToThirdPage:" destination="obO-Qk-gPt" eventType="primaryActionTriggered" id="NAV-QE-26T"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3hm-KG-G6I">
-                                <rect key="frame" x="87" y="276" width="240" height="128"/>
+                                <rect key="frame" x="88" y="148" width="240" height="257"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -57,7 +84,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6y3-Sm-g46" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="85"/>
+            <point key="canvasLocation" x="744.92753623188412" y="84.375"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="O3C-6I-BUN">
+            <objects>
+                <viewController storyboardIdentifier="ThirdViewController" id="anE-Wh-3um" customClass="ThirdViewController" customModule="screenTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YYA-Pa-wcg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifT-NF-esU">
+                                <rect key="frame" x="126" y="80" width="162" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back to First Page"/>
+                                <connections>
+                                    <action selector="navigateToFirstPage:" destination="anE-Wh-3um" eventType="primaryActionTriggered" id="BUJ-6K-8S4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvC-w1-5nd">
+                                <rect key="frame" x="126" y="131" width="162" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back to Second Page"/>
+                                <connections>
+                                    <action selector="navigateToSecondPage:" destination="anE-Wh-3um" eventType="primaryActionTriggered" id="TSm-j6-CN6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="k7N-2Y-XEr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfr-eQ-GMW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430.4347826086957" y="84.375"/>
         </scene>
     </scenes>
     <resources>

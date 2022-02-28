@@ -7,8 +7,14 @@
 
 import UIKit
 
-final class ViewController: UIViewController, Storyboarded {
-    weak var coordinator: MainCoordinator?
+public protocol FirstViewControllerDelegate: class {
+    func navigateToSecondPage()
+    func navigateToThirdPage()
+}
+
+ class FirstViewController: UIViewController, Storyboarded {
+
+     weak var delegate: FirstViewControllerDelegate?
  //   @IBOutlet weak var button: UIButton?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +25,13 @@ final class ViewController: UIViewController, Storyboarded {
     }
 
     @IBAction func goToSecondPage(_ sender: Any) {
-        print("go to second page")
-        print(coordinator)
-        coordinator?.secondView()
+        self.delegate?.navigateToSecondPage()
+     
     }
+     
+     @IBAction func goToThirdPage(_ sender: Any) {
+         self.delegate?.navigateToThirdPage()
+     }
 
 }
 
