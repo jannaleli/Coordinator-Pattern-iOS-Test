@@ -29,16 +29,24 @@ import UIKit
 extension FirstCoordnator: FirstViewControllerDelegate {
     func navigateToSecondPage() {
         let secondCoordinator = SecondCoordinator(navigationController: navigationController)
-        //secondCoordinator.delegate = self
+        secondCoordinator.delegate = self
         childCoordinators.append(secondCoordinator)
         secondCoordinator.start()
     }
     
     func navigateToThirdPage() {
         let thirdCoordinator = ThirdCoordinator(navigationController: navigationController)
-        //thirdCoordinator.delegate = self
+        thirdCoordinator.firstDelegate = self
         childCoordinators.append(thirdCoordinator)
         thirdCoordinator.start()
+    }
+    
+
+}
+extension FirstCoordnator: BackToFirstViewControllerDelegate {
+    func navigateBackToFirstPage(newOrderCoordinator: Any) {
+        navigationController.popToRootViewController(animated: true)
+        childCoordinators.removeLast()
     }
     
 

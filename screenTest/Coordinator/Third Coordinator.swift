@@ -7,18 +7,23 @@
 
 import Foundation
 import UIKit
-
+protocol BackToSecondViewControllerDelegate: class {
+    
+    func navigateBackToSecondPage(newOrderCoordinator: Any)
+    
+}
 class ThirdCoordinator: Coordinator {
    var childCoordinators = [Coordinator]()
    var navigationController: UINavigationController
-   
+    weak var secondDelegate: BackToSecondViewControllerDelegate? //To keep track of parent coordinator?
+    weak var firstDelegate: BackToFirstViewControllerDelegate?
    init(navigationController: UINavigationController) {
-       print("init")
+      
        self.navigationController = navigationController
    }
    
    func start() {
-       print("starting")
+   
        let vc = ThirdViewController.instantiate()
        vc.delegate = self
        navigationController.pushViewController(vc, animated: false)
@@ -26,20 +31,15 @@ class ThirdCoordinator: Coordinator {
 
     
 }
+
 extension ThirdCoordinator: ThirdViewControllerDelegate {
     func navigateToFirstPage() {
-        let firstCoordinator = FirstCoordnator(navigationController: navigationController)
-        //firstCoordinator.delegate = self
-        childCoordinators.append(firstCoordinator)
-        firstCoordinator.start()
+        self.firstDelegate?.navigateBackToFirstPage(newOrderCoordinator: navigationController)
     }
     
     func navigateToSecondPage() {
-        let secondCoordinator = SecondCoordinator(navigationController: navigationController)
-        //secondCoordinator.delegate = self
-        childCoordinators.append(secondCoordinator)
-        secondCoordinator.start()
+        self.secondDelegate?.navigateBackToSecondPage(newOrderCoordinator: navigationController)
     }
-    
-
 }
+
+
