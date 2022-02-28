@@ -22,7 +22,7 @@ class TableViewController: UIViewController, Storyboarded {
         print("viewDidLoad")
    
         dataSource = TableDataSource(dataSrc: self.sampleData)
-        delegate = TableViewDelegate(dataSrc: self.sampleData)
+
         
         self.table?.delegate = delegate
         self.table?.dataSource = dataSource

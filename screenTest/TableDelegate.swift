@@ -9,11 +9,7 @@ import UIKit
 
 class TableViewDelegate: NSObject, UITableViewDelegate {
 
-    var data: [String]?
-    
-    init(dataSrc: [String]) {
-        data = dataSrc
-    }
+ 
     func tableView(_: UITableView, willDisplay: UITableViewCell, forRowAt: IndexPath){
         
         
